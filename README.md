@@ -48,3 +48,56 @@ $ sudo apt-get update
 $ sudo apt install gtkwave
 ```
 <img width="775" height="91" alt="image" src="https://github.com/user-attachments/assets/49ec6f5b-2bf0-4f23-a1f8-5092ef3638e1" />
+
+#### <ins>**Ngspice**</ins>
+```bash
+$ tar -zxvf ngspice-37.tar.gz
+$ cd ngspice-37
+$ mkdir release && cd release
+$ ../configure --with-x --with-readline=yes --disable-debug
+$ make
+$ sudo make install
+```
+<img width="806" height="260" alt="Screenshot from 2025-09-21 03-29-49" src="https://github.com/user-attachments/assets/eb04d383-d026-47d7-b776-8172ddb7cb75" />
+
+#### <ins>**Magic**</ins>
+```bash
+$ sudo apt install -y m4 tcsh csh libx11-dev tcl-dev tk-dev \
+  libcairo2-dev mesa-common-dev libglu1-mesa-dev libncurses-dev
+
+$ git clone https://github.com/RTimothyEdwards/magic
+$ cd magic
+$ ./configure
+$ make
+$ sudo make install
+```
+<img width="833" height="80" alt="Screenshot from 2025-09-21 03-36-59" src="https://github.com/user-attachments/assets/87b9b235-a45a-43e5-a041-1104437ffa08" />
+
+#### <ins>**Docker**</ins>
+```bash
+$ sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
+$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | \
+  sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+$ echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] \
+$ https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | \
+$ sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+$ sudo apt update
+$ sudo apt install -y docker-ce docker-ce-cli containerd.io
+
+$ sudo docker run hello-world
+```
+<img width="833" height="619" alt="Screenshot from 2025-09-21 03-43-39" src="https://github.com/user-attachments/assets/a4cb50a1-3cf0-4f38-8348-63579dace989" />
+
+#### <ins>**OpenLane**</ins>
+```bash
+$ sudo apt update && sudo apt upgrade -y
+$ sudo apt install -y build-essential python3 python3-venv python3-pip make git
+
+$ cd $HOME
+$ git clone https://github.com/The-OpenROAD-Project/OpenLane
+$ cd OpenLane
+$ make
+$ make test
+```
